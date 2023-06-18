@@ -1,0 +1,135 @@
+<app-navbar></app-navbar>
+<section class="content">
+    <div class="container-fluid">
+      <div class="row m-t-sm">
+        <div class="col-md-15">
+            <div class="panel">
+                <div class="panel-body">
+                    <div class="col-md-12 col-sm-12" id="form" style="display:block;">
+                        <div class="panel panel-filled">
+                            <div class="panel-body">
+                                <div class="row">
+                                    <div class="col-sm-12"><h5 class="m-t-xs">Editar Ubicacion</h5></div>
+                                </div>
+                                <form [formGroup]="ubicacionForm" (ngSubmit)="agregarUbicacion()">
+                                    <div class="form-group">
+                                        <label>Departamento</label>
+                                        <input type="text" formControlName="departamento"
+                                            class="form-control" placeholder="Ingresar Departamento">
+                                        <div class="text-danger"
+                                            *ngIf="ubicacionForm.get('departamento')?.hasError('required') && 
+                                                    ubicacionForm.get('departamento')?.touched">
+                                            <span>El departamento <strong>es obligatorio</strong></span>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Distrito</label>
+                                        <input type="text" formControlName="distrito" 
+                                            class="form-control" placeholder="Ingresar Distrito">
+                                        <div class="text-danger"
+                                            *ngIf="ubicacionForm.get('distrito')?.hasError('required') && 
+                                                    ubicacionForm.get('distrito')?.touched">
+                                            <span>El distrito <strong>es obligatoria</strong></span>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Latitud del Centro</label>
+                                        <input type="number" formControlName="c_lat" 
+                                            class="form-control" placeholder="Ingresar latitud del centro">
+                                        <div class="text-danger"
+                                            *ngIf="ubicacionForm.get('c_lat')?.hasError('required') && 
+                                                    ubicacionForm.get('c_lat')?.touched">
+                                            <span>La latitud central <strong>es obligatoria</strong></span>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Longitud del Centro</label>
+                                        <input type="number" formControlName="c_long" 
+                                            class="form-control" placeholder="Ingresar longitud del centro">
+                                        <div class="text-danger"
+                                            *ngIf="ubicacionForm.get('c_long')?.hasError('required') && 
+                                                    ubicacionForm.get('c_long')?.touched">
+                                            <span>La longitud central <strong>es obligatorio</strong></span>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label>Latitud de la 1er tienda</label>
+                                        <input type="number" formControlName="lat1" 
+                                            class="form-control" placeholder="Ingresar latitud de la 1er tienda">
+                                        <div class="text-danger"
+                                            *ngIf="ubicacionForm.get('lat1')?.hasError('required') && 
+                                                    ubicacionForm.get('lat1')?.touched">
+                                            <span>La latitud de la 1er tienda <strong>es obligatoria</strong></span>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Longitud de la 1er tienda</label>
+                                        <input type="number" formControlName="long1" 
+                                            class="form-control" placeholder="Ingresar longitud de la 1er tienda">
+                                        <div class="text-danger"
+                                            *ngIf="ubicacionForm.get('long1')?.hasError('required') && 
+                                                    ubicacionForm.get('long1')?.touched">
+                                            <span>La longitud de la 1er tienda <strong>es obligatorio</strong></span>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="form-group">
+                                        <label>Latitud de la 2da tienda</label>
+                                        <input type="number" formControlName="lat2" 
+                                            class="form-control" placeholder="Ingresar latitud de la 2da tienda">
+                                        <div class="text-danger"
+                                            *ngIf="ubicacionForm.get('lat2')?.hasError('required') && 
+                                                    ubicacionForm.get('lat2')?.touched">
+                                            <span>La latitud de la 2da tienda <strong>es obligatoria</strong></span>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Longitud de la 2da tienda</label>
+                                        <input type="number" formControlName="long2" 
+                                            class="form-control" placeholder="Ingresar longitud de la 2da tienda">
+                                        <div class="text-danger"
+                                            *ngIf="ubicacionForm.get('long2')?.hasError('required') && 
+                                                    ubicacionForm.get('long2')?.touched">
+                                            <span>La longitud de la 2da tienda <strong>es obligatorio</strong></span>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="form-group">
+                                        <label>Latitud de la 1er tienda</label>
+                                        <input type="number" formControlName="lat3" 
+                                            class="form-control" placeholder="Ingresar latitud de la 3er tienda">
+                                        <div class="text-danger"
+                                            *ngIf="ubicacionForm.get('lat3')?.hasError('required') && 
+                                                    ubicacionForm.get('lat3')?.touched">
+                                            <span>La latitud de la 3er tienda <strong>es obligatoria</strong></span>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Longitud de la 3er tienda</label>
+                                        <input type="number" formControlName="long3" 
+                                            class="form-control" placeholder="Ingresar longitud de la 3er tienda">
+                                        <div class="text-danger"
+                                            *ngIf="ubicacionForm.get('long3')?.hasError('required') && 
+                                                    ubicacionForm.get('long3')?.touched">
+                                            <span>La longitud de la 3er tienda <strong>es obligatorio</strong></span>
+                                        </div>
+                                    </div>
+                                    <div  class="col-sm-12 text-right">
+                                        <div class="panel-body buttons-margin">
+                                           <button type="submit"   class="btn btn-w-md btn-success">Guardar</button>&nbsp;&nbsp;
+                                           <button class="btn btn-w-md btn-warning" routerLink="/tiendas">Cancelar</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>    
+      </div>
+    </div>
+  </section>
